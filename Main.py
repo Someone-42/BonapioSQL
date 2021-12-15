@@ -3,17 +3,17 @@ import os
 
 DATA_DIR = "./Data/"
 
-def Init():
+def init():
     if not os.path.exists(DATA_DIR):
         os.mkdir(DATA_DIR)
 
 def main():
     pass
 
-def Test1():
+def test1():
     pass
     
 
 if __name__ == "__main__":
-    Init()
+    init()
     Test1()
