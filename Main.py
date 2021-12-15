@@ -16,4 +16,4 @@ def test1():
 
 if __name__ == "__main__":
     init()
-    Test1()
+    test1()
