@@ -10,7 +10,7 @@ def generate_telephone():
     global __NUMEROS_EXISTANTS
     numero = _get_numero()
     while numero in __NUMEROS_EXISTANTS:
-        numero = _get_numero
+        numero = _get_numero()
     __NUMEROS_EXISTANTS.append(numero)
     return numero
 
