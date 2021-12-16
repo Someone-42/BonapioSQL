@@ -1,0 +1,5 @@
+CREATE TABLE Utilisateur(
+    nom TEXT,
+    prenom TEXT,
+    telephone CHAR(10) PRIMARY KEY
+);
