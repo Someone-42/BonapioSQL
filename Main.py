@@ -1,5 +1,6 @@
 import DBUtils as db
 import BDshell as dbs
+import DataGen as dg
 import os
 
 # Directories
@@ -25,6 +26,13 @@ def main():
 def test1():
     dbs.affiche_base(USER_DB_NAME)
     
+    # Values insertion test
+    dbs.execute(USER_DB_NAME, db.get_insert_order("Utilisateur", "sarrasin", "jean", dg.generate_telephone()))
+    dbs.execute(USER_DB_NAME, db.get_insert_order("Utilisateur", "sarrasin", "michel", dg.generate_telephone()))
+    dbs.execute(USER_DB_NAME, db.get_insert_order("Utilisateur", "martin", "paul", dg.generate_telephone()))
+
+    dbs.affiche_base(USER_DB_NAME)
+
 if __name__ == "__main__":
     init()
     test1()
