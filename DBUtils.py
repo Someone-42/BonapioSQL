@@ -1,16 +1,16 @@
 import BDshell as db
 import os
 
-def create_database(db_name: str):
+def create_database(db_name: str, create_order_file: str):
     """ Cree la database en suivant le modele relationel """
-    f = open("Programmation/TDs/TD - Brevet des colleges/CreateDB.txt", "r")
+    f = open(create_order_file, "r")
     for order in f.read().split(';'): # Je separe les ordres par des ; et non pas des \n
         db.execute(db_name, order)
 
-def reset_db(db_name: str):
+def reset_db(db_name: str, create_order_file: str):
     """ Remet la database a 0 (utile pour les erreurs) """
     if os.path.exists(db_name): os.remove(db_name)
-    create_database(db_name)
+    create_database(db_name, create_order_file)
 
 def get_insert_order(table_name: str, *values) -> str:
     """ Renvoies l'ordre d'insert a partir des valeurs """
